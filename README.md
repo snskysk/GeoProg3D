@@ -2,18 +2,18 @@
 
 <!-- <div align="center">
   <a href="">
-    <img src="assets/logo.png" width="40%" align="center"/>
+    <img src="code/assets/logo.png" width="40%" align="center"/>
   </a>
 </div>
 --- -->
 
 <div align="center">
   <a href="">
-    <img src="assets/teaser.png" width="80%" align="center"/>
+    <img src="code/assets/teaser.png" width="80%" align="center"/>
   </a>
 </div>
 
-<!-- ![Teaser image](assets/teaser.png) -->
+<!-- ![Teaser image](code/assets/teaser.png) -->
 <br>
 
 
@@ -62,7 +62,7 @@ We provide a notebook [geoprog3d/notebooks/main.ipynb](geoprog3d/notebooks/main.
 
 <div align="center">
   <a href="">
-    <img src="assets/notebook_example.png" width="60%" align="center"/>
+    <img src="code/assets/notebook_example.png" width="60%" align="center"/>
   </a>
 </div>
 
@@ -90,13 +90,13 @@ Georeferencing results for each scene are provided under the `georeference` dire
 
 <!-- <div align="center">
   <a href="">
-    <img src="assets/qualitative.png" width="95%" align="center"/>
+    <img src="code/assets/qualitative.png" width="95%" align="center"/>
   </a>
 </div> -->
 
 <div align="center">
   <a href="">
-    <img src="assets/fig_appendix_qualitative.png" width="95%" align="center"/>
+    <img src="code/assets/fig_appendix_qualitative.png" width="95%" align="center"/>
   </a>
 </div>
 
