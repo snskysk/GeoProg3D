@@ -1,0 +1,16 @@
+{
+    "US-NewYork-Queens-10-Center-Blvd-R375-A410_00.jpeg": [
+        {
+            "label": "There are more than 3 buildings.",
+            "gt": "yes"
+        },
+        {
+            "label": "There are 3 or less buildings.",
+            "gt": "no"
+        },
+        {
+            "label": "There are more than 5 buildings between <47-05 Center Blvd> and <PS/IS 78Q The Robert F. Wagner, Jr. School>.",
+            "gt": "no"
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+num_workers: &num_workers 4
+
+NAIVE_STAGE:
+  init:
+    # ckptname: /workspace/t2024/LoG/output/US-NewYork-Queens-10-Center-Blvd-R375-A410_init1_train1/test/log/model_tree.pth
+    loader:
+      module: iteration
+      args:
+        batch_size: 1
+        iterations: 20
+        num_workers: *num_workers
+    dataset_state:
+      scale: 1
+    model_state: {}
+  tree:
+    # ckptname: /workspace/t2024/LoG/output/US-NewYork-Queens-10-Center-Blvd-R375-A410_init1_train1/test/log_c300/model_tree.pth
+    # ckptname: /workspace/t2024/LoG/output/citygen/US-NewYork-Queens-10-Center-Blvd-R375-A410/model_latest.pth
+    # ckptname: /workspace/t2024/LoG/output/US-NewYork-Queens-10-Center-Blvd-R375-A410_init1_train1/test/log/model_tree_colors_k.pth
+    loader:
+      module: iteration
+      args:
+        batch_size: 1
+        iterations: 150
+        num_workers: *num_workers
+    dataset_state:
+      scale: 1
+    render_state:
+      render_depth: False
+    model_state:
+      enable_sh: True
+  tree_colors:
+    loader:
+      module: iteration
+      args:
+        batch_size: 1
+        iterations: 300
+        num_workers: *num_workers
+    dataset_state:
+      scale: 1
+    render_state:
+      render_depth: False
+    model_state:
+      enable_sh: True

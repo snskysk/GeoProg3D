@@ -1,0 +1,17 @@
+{
+    "US-NewYork-Queens-10-Center-Blvd-R375-A410_00.jpeg": [
+        {
+            "label": "How far is <45-45 Center Blvd> from <The View>?",
+            "gt": 170
+        },
+        {
+            "label": "How far is the skyscraper closest to <Quik Park> from <Quik Park>?",
+            "gt": 55
+        },
+
+        {
+            "label": "How far is the red-lettered billboard closest to <The View> from <Quik Park>?",
+            "gt": 163
+        }
+    ]
+}

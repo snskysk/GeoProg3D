@@ -1,0 +1,112 @@
+root: /workspace/datasets/Square/square
+PLYNAME: /workspace/datasets/Square/square/sparse_align/sparse.npz
+scale3d: 1.
+xyz_scale: 1.
+ground_height: &ground_height 1.18
+language_feature_path: /workspace/datasets/Square/language_features_dim3/
+sam_feature_level: 0
+dir_structure: multi
+
+dataset:
+  module: LoG.dataset.colmap.ImageDataset
+  args:
+    root: $root
+    cache: cache.pkl
+    pre_undis: True
+    share_camera: False
+    cameras: sparse_align
+    scales: [4, 8]
+    crop_size: [-1, -1]
+    znear: 0.001
+    zfar: 100.
+    scale3d: $scale3d
+    ext: .JPG
+
+val_dataset:
+  module: LoG.dataset.colmap.ImageDataset
+  args:
+    root: $root
+    namelist: 
+        - cam01/1_DJI_0345.JPG
+        - cam02/1_DJI_0644.JPG
+        - cam03/2_DJI_0295.JPG
+        - cam04/2_DJI_0370.JPG
+        - cam11/DJI_0049.JPG
+        - cam12/DJI_0040.JPG
+        - cam21/DJI_0240.JPG
+        - cam21/DJI_0843.JPG
+    cache: cache_val.pkl
+    pre_undis: True
+    share_camera: False
+    cameras: sparse_align
+    scales: [4]
+    crop_size: [-1, -1]
+    znear: 0.001
+    zfar: 100.
+    scale3d: $scale3d
+    ext: .JPG
+
+overlook:
+  iteration:
+    init: [0, 1000000, 10000]
+  dataset:
+    module: LoG.dataset.overlook.OverlookByScale
+    args:
+      focal: 3000.
+      shape: [1920, 1080]
+      axis_up: "z"
+      ground_height: 2.2
+      scales: [1, 8]
+      border_length: 25.
+      lookat: [0., 0., 0]
+      step: 4
+      zfar: 200.
+
+
+demo_interpolate:
+  model_state:
+    enable_sh: True
+    log_query: False
+  dataset:
+    module: LoG.dataset.demo.InterpolatePath
+    args:
+      cameras: $PLYNAME
+      scale: 4
+      steps: 20
+      subs:
+        - cam01/1_DJI_0345.JPG
+        - cam02/1_DJI_0644.JPG
+        - cam03/2_DJI_0295.JPG
+        - cam04/2_DJI_0370.JPG
+        
+demo_overlook:
+  iteration: 1000
+  dataset:
+    module: LoG.dataset.overlook.OverlookByScale
+    args:
+      focal: 3000.
+      shape: [1920, 1080]
+      axis_up: "z"
+      ground_height: *ground_height
+      scales: [1, 8]
+      border_length: 15.
+      lookat: [0., 0., 0]
+      step: 10
+      zfar: 200.
+
+demo_lookat:
+  dataset:
+    module: LoG.dataset.overlook.LookAt
+    args:
+      K: [[1836, 0., 1368],
+          [0, 1836, 912],
+          [0, 0., 1.]]
+      scale: 1
+      H: 1824
+      W: 2736
+      lookat: [0., -1., *ground_height]
+      ranges: [[0, 360, 361]]
+      radius: [[0.5, 10., 361]]
+      angle: 45
+  model_state:
+    enable_sh: True

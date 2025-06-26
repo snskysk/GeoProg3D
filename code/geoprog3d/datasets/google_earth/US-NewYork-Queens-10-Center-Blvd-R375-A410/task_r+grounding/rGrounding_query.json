@@ -1,0 +1,16 @@
+{
+    "US-NewYork-Queens-10-Center-Blvd-R375-A410_08.jpeg": [
+        {
+            "label": "There is a red lettering signboard within 200 meters of <The View>.",
+            "gt": "yes"
+        },
+        {
+            "label": "There is a skyscraper directly west of <45-45 Center Blvd>.",
+            "gt": "yes"
+        },
+        {
+            "label": "There is a grass area to the directly east of <PS/IS 78Q The Robert F. Wagner, Jr. School>.",
+            "gt": "yes"
+        }
+    ]
+}

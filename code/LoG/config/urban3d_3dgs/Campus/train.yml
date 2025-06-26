@@ -1,0 +1,31 @@
+parents:
+  - config/urban3d_3dgs/Campus/dataset.yml
+  - config/urban3d_3dgs/Campus/level_of_gaussian.yml
+  - config/urban3d_3dgs/Campus/stage_8_4.yml
+
+exp: output/urban3d/Campus/3dgs
+gpus: [2]
+
+log_interval: 1000
+save_interval: 100_000
+
+max_steps: 750
+
+RGB_RENDER_L1_SSIM:
+  module: LoG.render.renderer.NaiveRendererAndLoss
+  args:
+    use_origin_render: False
+    use_randback: True
+
+train:
+  dataset: $dataset
+  render: $RGB_RENDER_L1_SSIM
+  stages: $NAIVE_STAGE
+  init:
+    method: scale_min
+    dataset_state:
+      scale: 4
+
+# val:
+#   dataset: $val_dataset
+#   iteration: 10000

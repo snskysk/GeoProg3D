@@ -1,0 +1,16 @@
+{
+    "US-NewYork-Queens-10-Center-Blvd-R375-A410_00.jpeg": [
+        {
+            "label": "<The View> is within 100 meters of <47-05 Center Blvd>.",
+            "gt": "no"
+        },
+        {
+            "label": "The building to the directly west of <45-45 Center Blvd> is within 50 meters of the red lettering signboard.",
+            "gt": "no"
+        },
+        {
+            "label": "The sport field between <47-05 Center Blvd> and <PS/IS 78Q The Robert F. Wagner, Jr. School> is within 100 meters of <47-05 Center Blvd>.",
+            "gt": "yes"
+        }
+    ]
+}

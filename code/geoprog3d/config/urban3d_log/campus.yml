@@ -1,0 +1,45 @@
+project_root: /workspace/t2024/
+geo_reference_json: /workspace/t2024/LoG/my_data/campus/Campus_building_en_rotated.json
+topdown_view_parameter:
+  rotated_angle: 289
+  height: 2048
+  width: 2048
+  one_side_meter: 2230
+topdown_seglist_json: /workspace/t2024/LoG/renders4visprog/querys_topdown_seg_list.json
+request_similar_area_json: /workspace/t2024/LoG/renders4visprog/request_similar_area_json.json
+process_finish_flag: /workspace/t2024/LoG/renders4visprog/process_finish.txt
+similarity_wake_flag_path: /workspace/t2024/geoprog3d/similarity_process_wake.txt
+similarity_count_json: /workspace/t2024/geoprog3d/similarity_count.json
+counting_wake_flag_path: /workspace/t2024/geoprog3d/counting_process_wake.txt
+height_wake_flag_path: /workspace/t2024/geoprog3d/height_process_wake.txt
+
+scene_info:
+  scene_name: Campus
+  config_path: /workspace/t2024/LoG/config/urban3d/Campus/train.yml
+  dataset_path: /workspace/t2024/LoG/config/urban3d/Campus/dataset.yml
+  ckpt_path: /workspace/t2024/LoG/output/urban3d/Campus/log/model_tree.pth
+  ckpt_colors_path: /workspace/t2024/LoG/output/urban3d/Campus/log/model_tree_colors.pth
+  renders_npy: /workspace/t2024/LoG/renders4visprog/<scene>/renders_npy/
+  camera_param:
+    topdown: x=2.5943610534988615, y=10.105720156978162, z=-280.0, yaw=-89.86099999999993, pitch=0.03619999999999995, roll=0.0, image_size=(2048, 2048), focal_length=39000.0, scale=1.0, znear=0.001, zfar=14000.0
+    topdown_small: x=2.5943610534988615, y=10.105720156978162, z=-280.0, yaw=-89.86099999999993, pitch=0.03619999999999995, roll=0.0, image_size=(1024, 1024), focal_length=22500.0, scale=1.0, znear=0.001, zfar=14000.0
+    arbitrary: 
+        - x=2.5943610534988615, y=10.105720156978162, z=-280.0, yaw=-89.86099999999993, pitch=0.03619999999999995, roll=0.0, image_size=(1024, 1024), focal_length=22500.0, scale=1.0, znear=0.001, zfar=14000.0
+    eval_index_list: [0]
+    arbitrary_height: 1024
+    arbitrary_width: 1024
+
+filtering_gaussian: False
+
+get_sim_param:
+  mask_thresh: 0.3
+  heatmap_thresh: 180
+  adjust_gs_axis: True
+  ae_ckpt_path: /workspace/t2024/LangSplat/ckpts/Campus/best_ckpt.pth
+  ae_encoder_dims: [256, 128, 64, 32, 3]
+  ae_decoder_dims: [16, 32, 64, 128, 256, 256, 512]
+
+grounding_dino_param:
+  pyfile: /workspace/t2024/counting/GroundingDINO_SwinT_OGC.py
+  weight_path: /workspace/t2024/counting/groundingdino_swint_ogc.pth
+  box_threshold: 0.25

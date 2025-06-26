@@ -1,0 +1,37 @@
+parents:
+  - config/citygen_3dgs/US-NewYork-4WorldFinancialCtr-R375-A810/dataset.yml
+  - config/citygen_3dgs/US-NewYork-4WorldFinancialCtr-R375-A810/level_of_gaussian.yml
+  - config/citygen_3dgs/US-NewYork-4WorldFinancialCtr-R375-A810/stage_8_4.yml
+
+exp: output/citygen/US-NewYork-4WorldFinancialCtr-R375-A810/3dgs_wdepth
+gpus: [0]
+
+log_interval: 1000
+save_interval: 10_000
+
+max_steps: 750
+
+dataset:
+  module: LoG.dataset.colmap.DepthDataset
+  args:
+    depth_scale: 8
+
+RGB_RENDER_L1_SSIM:
+  module: LoG.render.renderer.NaiveRendererAndLoss
+  args:
+    use_origin_render: False
+    use_randback: True
+    render_depth: True
+
+train:
+  dataset: $dataset
+  render: $RGB_RENDER_L1_SSIM
+  stages: $NAIVE_STAGE
+  init:
+    method: scale_min
+    dataset_state:
+      scale: 4
+
+val:
+  dataset: $val_dataset
+  iteration: 10000

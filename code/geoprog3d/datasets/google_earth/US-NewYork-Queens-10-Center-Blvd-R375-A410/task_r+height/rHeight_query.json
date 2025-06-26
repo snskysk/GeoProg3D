@@ -1,0 +1,20 @@
+{
+    "US-NewYork-Queens-10-Center-Blvd-R375-A410_12.jpeg": [
+        {
+            "label": "Which is taller, <47-05 Center Blvd> or <The View>?",
+            "gt": "47-05 Center Blvd"
+        },
+        {
+            "label": "Which is taller, the building that is closest to <The View> or <The View>?",
+            "gt": "The View"
+        },
+        {
+            "label": "Which is taller, the building that is closest to <PS/IS 78Q The Robert F. Wagner, Jr. School> or <Taylor Creative>?",
+            "gt": "the building that is closest to <PS/IS 78Q The Robert F. Wagner, Jr. School>"
+        },
+        {
+            "label": "Which is taller, the grass area that is closest to <45-45 Center Blvd> or <Taylor Creative>?",
+            "gt": "the grass area that is closest to <45-45 Center Blvd>"
+        }
+    ]
+}

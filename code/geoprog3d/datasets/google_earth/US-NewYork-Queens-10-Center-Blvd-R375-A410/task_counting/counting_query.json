@@ -1,0 +1,16 @@
+{
+    "US-NewYork-Queens-10-Center-Blvd-R375-A410_00.jpeg": [
+        {
+            "label": "How many grass areas are there?",
+            "gt": 3
+        },
+        {
+            "label": "How many buildings are there to the south of <PS/IS 78Q The Robert F. Wagner, Jr. School>?",
+            "gt": 4
+        },
+        {
+            "label": "How many skyscrapers are there to the directly west of <45-45 Center Blvd>?",
+            "gt": 1
+        }
+    ]
+}

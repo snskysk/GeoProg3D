@@ -1,0 +1,16 @@
+{
+    "US-NewYork-Queens-10-Center-Blvd-R375-A410_22.jpeg": [
+        {
+            "label": "How tall is <47-05 Center Blvd>?",
+            "gt": 104
+        },
+        {
+            "label": "How tall is the building that is closest to <The View>?",
+            "gt": 36
+        },
+        {
+            "label": "How tall is the tallest object within 100 meters of <Quik Park>?",
+            "gt": 135
+        }
+    ]
+}
