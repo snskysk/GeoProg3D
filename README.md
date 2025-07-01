@@ -10,6 +10,7 @@
 <div align="center">
   <a href="">
     <img src="code/assets/teaser.png" width="80%" align="center"/>
+
   </a>
 </div>
 
