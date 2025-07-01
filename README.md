@@ -127,10 +127,11 @@ If you found our paper or code useful, please cite it as:
   title={GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields},
   author={Shunsuke, Yasuki and Taiki, Miyanishi and Nakamasa, Inoue and Shuhei, Kurita and Koya, Sakamoto and Daichi, Azuma and Masato, Taki and Yutaka Matsuo},
   booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-  year={2025}
+  year={2025},
+  url={https://arxiv.org/abs/2506.23352}
 }
 ```
 
-<!-- url={https://arxiv.org/abs/} -->
+
 
 
